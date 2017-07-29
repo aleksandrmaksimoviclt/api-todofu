@@ -25,7 +25,7 @@ SECRET_KEY = 'x15b_yea4yxjp!-3&he3t2!fhllwj%y1kity7p4_m#r%u)i9=^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['api.todofu.com',]
 
 
 # Application definition

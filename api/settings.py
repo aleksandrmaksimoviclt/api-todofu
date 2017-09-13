@@ -23,9 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x15b_yea4yxjp!-3&he3t2!fhllwj%y1kity7p4_m#r%u)i9=^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['api.todofu.com',]
+ALLOWED_HOSTS = ['api.todofu.com', 'localhost',]
+
+CORS_ORIGIN_WHITELIST = (
+    'api.todofu.com',
+    'localhost:3000',
+)
 
 
 # Application definition
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
     # User added
     'v1.apps.V1Config',
     'rest_framework',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -54,6 +60,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
